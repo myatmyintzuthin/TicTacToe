@@ -1,4 +1,4 @@
-# TicTacToe C++
+# TicTacToe :game_die:
 TicTacToe Game in C++ implementation.
 
 ## version 1.0 - simple procedure approach
