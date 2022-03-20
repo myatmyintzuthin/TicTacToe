@@ -20,4 +20,21 @@ TicTacToe game for two users inputs. To play the game run:
 - '1' represents player 1 and '2' represents player 2 on the board.
 
 
+## version 2.0 - OOP approach
+TicTacToe game for two users inputs. To play the game run:
+```
+./tic_tac_toe_v2
+```
+### Board style:
+```bash
+ X   1   O
+--- --- ---
+ X   4   X
+--- --- ---
+ 6   X   X
+--- --- ---
+
+```
+- The users need to input [number] of the position they want to occupy. 
+- 'X' represents player 1 and 'O' represents player 2 on the board.
 
