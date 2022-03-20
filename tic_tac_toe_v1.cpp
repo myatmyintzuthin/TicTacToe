@@ -8,10 +8,11 @@ int main(){
     
     int board[3][3] = { 0 };
     int row, col;
-    int n = sizeof(board)/sizeof(board[0]); 
-
-    cout << "Game Start!" << endl << "Enter the position [row,column] you want to place! " << endl;
+    int n = sizeof(board)/sizeof(board[0]);
     
+    cout << "Game Start!" << endl << "Enter the position [row,column] you want to place! " << endl;
+    display_board(board,n);
+
     while(TRUE){
         static int player = 1;
         cout << "Player " << player << ":";
@@ -42,7 +43,6 @@ int main(){
         if(player == 1){ player = 2;} else{ player = 1;};
         
     }
-    cout << "Game Over!" << endl;
-
+    
     return 0;
 }

@@ -15,13 +15,18 @@ bool isdraw(int board[][3],int n){
 }
 void display_board(int board[][3],int n){
 
+    cout << "" << endl;
     cout << "Current Board:" << endl;
     for(int i=0; i < n; ++i){
         for(int j=0; j < n; ++j){
-            cout << board[i][j] << '\t';  
+
+            cout << " " << board[i][j] << "  ";  
         }
         cout << "" << endl;
+        cout << "---" << " " << "---" << " " << "---" << endl;  
     }
+    cout << "" << endl;
+
 };
 
 void place_items(int board[][3],int player,int row,int col){
