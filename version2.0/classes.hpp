@@ -18,7 +18,14 @@ class Player{
         int getmove(){
             displayturn();
             cin >> move;
-            // cout << move << endl;
+            while (!cin)
+            {
+                cout << "Invalid position, re-enter: " << endl;
+                cin.clear();
+                cin.ignore();
+                cin >> move;
+            }
+            
             return move;
         };          
 };
