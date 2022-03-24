@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define TRUE 1
+#define FALSE 0
 using namespace std;
 class Player{
     public:
@@ -41,6 +43,7 @@ class gameBoard{
         bool draw;
         
         gameBoard(){
+            draw = FALSE;
             numb = sizeof(board) / sizeof(board[0]);
         }
         void greeting(){
@@ -87,40 +90,25 @@ class gameBoard{
                 take_position(player,move_id);
             }     
         }
-        bool isdraw(){
-            for(int i=0; i < numb; ++i){
-                for(int j=0; j < numb; ++j){
-                    if(board[i][j] == ' '){
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
         bool check_winner(){
             
             for(int i=0; i < numb; i++){
                 if(board[i][0] != ' ' && board[i][0] == board[i][1] && board[i][1] == board[i][2]) // vertical
-                    return true;
+                    return TRUE;
                 if(board[0][i] != ' ' && board[0][i] == board[1][i] && board[1][i] == board[2][i]) // horizontal
-                    return true;
+                    return TRUE;
             }
             if(board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) // diagonal
-                return true;
+                return TRUE;
             if(board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) // anti-diagonal
-                return true;
+                return TRUE;
             
-            if(isdraw() == true)
-            {
-                draw=isdraw();
-                return true;
-            }
-            return false;
+            return FALSE;
         }
         void result(int turn){
-            if(turn == 1 && draw == false)
+            if(turn == 2 && draw == FALSE)
                 cout << "Player (O) Wins!!" << endl;
-            else if(turn == 2 && draw == false)
+            else if(turn == 3 && draw == FALSE)
                 cout << "Player (X) Wins!!" << endl;
             else
                 cout << "This is a Draw!" << endl;
@@ -129,18 +117,18 @@ class gameBoard{
         {
             int score = 0;
             int bestScore = 0;
-            if (check_winner() == true)
+            if (check_winner() == TRUE)
             {
-                if (isAI == true)
+                if (isAI == TRUE)
                     return -1;
-                if (isAI == false)
+                if (isAI == FALSE)
                     return +1;
             }
             else
             {
                 if(depth < 9)
                 {
-                    if(isAI == true)
+                    if(isAI == TRUE)
                     {
                         bestScore = -999;
                         for(int i=0; i< numb; i++)
@@ -150,7 +138,7 @@ class gameBoard{
                                 if (board[i][j] == ' ')
                                 {
                                     board[i][j] = 'X';
-                                    score = minimax(board, depth + 1, false);
+                                    score = minimax(board, depth + 1, FALSE);
                                     board[i][j] = ' ';
                                     if(score > bestScore)
                                     {
@@ -171,7 +159,7 @@ class gameBoard{
                                 if (board[i][j] == ' ')
                                 {
                                     board[i][j] = 'O';
-                                    score = minimax(board, depth + 1, true);
+                                    score = minimax(board, depth + 1, TRUE);
                                     board[i][j] = ' ';
                                     if (score < bestScore)
                                     {
@@ -199,7 +187,7 @@ class gameBoard{
                 for (int j = 0; j < numb; j++){
                     if (board[i][j] == ' '){
                         board[i][j] = 'X';
-                        score = minimax(board,moveIndex+1, false);
+                        score = minimax(board,moveIndex+1, FALSE);
                         board[i][j] = ' ';
                         if(score > bestScore)
                         {

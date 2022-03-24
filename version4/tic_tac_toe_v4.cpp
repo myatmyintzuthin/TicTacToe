@@ -2,28 +2,34 @@
 #include <stdlib.h>
 #include <time.h>
 #include "classes.hpp"
-#define AI 1
-#define HUMAN 2
+#define AI 2
+#define HUMAN 3
 using namespace std;
 
 void play_tictactoe(gameBoard board,int turn){
     Player computer('X'), human('O');
-    while(board.check_winner() == false){
+    int moveid = 0;
+    int available_move = (board.numb * board.numb);
+    while(board.check_winner() == FALSE && moveid < available_move){
         if(turn == AI){
             computer.displayturn();
-            int move = board.bestMove(0);
+            int move = board.bestMove(moveid);
             cout << move << endl;
             board.take_position(computer,move);
+            moveid++;
             board.display_board();
             turn = HUMAN;                       
         }
         else if(turn == HUMAN){
             int move = human.getmove();
             board.take_position(human, move);
+            moveid++;
             board.display_board();
             turn = AI;
         }
     }
+    if (moveid == available_move)
+        board.draw = TRUE;
     board.result(turn);
 }
 int main(){
