@@ -20,7 +20,7 @@ To play the game run:
 - '1' represents player 1 and '2' represents player 2 on the board.
 
 ## version 1.1 - OOP approach (2 players)
-```
+
 ### Board style:
 ```bash
  X   1   O
