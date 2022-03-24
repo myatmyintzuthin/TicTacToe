@@ -18,7 +18,7 @@ class Player{
         int getmove(){
             displayturn();
             cin >> move;
-            cout << move << endl;
+            // cout << move << endl;
             return move;
         };          
 };

@@ -24,7 +24,7 @@ void play_tictactoe(gameBoard board,int turn){
             int move = human.getmove();
             board.take_position(human, move);
             moveid++;
-            board.display_board();
+            // board.display_board();
             turn = AI;
         }
     }
