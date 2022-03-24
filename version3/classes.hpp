@@ -24,29 +24,14 @@ class gameBoard{
 
     private: 
         int translate_move(int move){
-            switch (move)
-           {
-            case 0: row = 0; col = 0; 
-                break;
-            case 1: row = 0; col = 1;
-                break;
-            case 2: row = 0; col = 2; 
-                break;
-            case 3: row = 1; col = 0;
-                break;
-            case 4: row = 1; col = 1; 
-                break;
-            case 5: row = 1; col = 2;
-                break;
-            case 6: row = 2; col = 0; 
-                break;
-            case 7: row = 2; col = 1;
-                break;
-            case 8: row = 2; col = 2; 
-                break;
-            default: row = -1; col = -1;
-               break;
-           }
+            if(move > 0 && move < 9){
+                row = move/numb;
+                col = move%numb;
+            }
+            else{
+                row = -1;
+                col = -1;
+            }
            return row, col;
         }
 
@@ -120,7 +105,7 @@ class gameBoard{
             return FALSE;
         }
         void result(Player player){
-            cout << draw << endl;
+            
             if(player.name == 'X' && draw == FALSE)
                 cout << "Player (O) Wins!!" << endl;
             else if(player.name == 'O' && draw == FALSE)
