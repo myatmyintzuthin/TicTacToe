@@ -4,7 +4,7 @@ To play the game run:
 ```
 ./versionX.X/tic_tac_toe_vX.X
 ```
-## version 1.0 - simple procedure approach (2 players)
+## version 1.0 - simple procedural approach (2 players)
 
 ### Board style:
 ```bash
