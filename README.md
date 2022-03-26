@@ -1,50 +1,10 @@
 # TicTacToe :game_die:
 TicTacToe Game in C++ implementation.
 
-## version 1.0 - simple procedure approach
-Tow Players TicTacToe game. To play the game run:
-```
-./version1.0/tic_tac_toe_v1.0
-```
-### Board style:
-```bash
- 0   1   0
---- --- ---
- 0   0   0
---- --- ---
- 2   0   0
---- --- ---
-
-```
-- The users need to input [row][column] of the position they want to occupy. 
-- '1' represents player 1 and '2' represents player 2 on the board.
-
-
-## version 1.1 - OOP approach
-Tow Players TicTacToe game. To play the game run:
-```
-./version1.1/tic_tac_toe_v1.1
-```
-### Board style:
-```bash
- X   1   O
---- --- ---
- X   4   X
---- --- ---
- 6   X   X
---- --- ---
-
-```
-- The users need to input [number] of the position they want to occupy. 
-- 'X' represents player 1 and 'O' represents player 2 on the board.
-
-## version 1.2 - OOP approach
-Version 1.2 is just an improved version 1.1.
-
-## version 2.0 - HUMAN Vs AI (minimax algorithm)
+## HUMAN Vs AI - Minimax Algorithm
 One player TicTacToe game. To play the game run:
 ```
-./version2.0/tic_tac_toe_v2.0
+./minimax/tic_tac_toe_minimax
 ```
 ### Board style:
 ```bash
@@ -66,6 +26,3 @@ Current Board:
 
 Do you want to go first?[y/n] 
 ```
-
-## version 2.1
-coming soon ...

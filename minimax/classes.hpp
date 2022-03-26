@@ -75,17 +75,6 @@ class gameBoard{
             cout << "" << endl;
         }
 
-        int find_available_move(){
-            int count = 0;  
-            for(int i=0; i < numb; i++){
-                for(int j=0; j< numb; j++){
-                    if(board[i][j] != 'X' && board[i][j] != 'O'){
-                        count++;
-                    }
-                }
-            }
-            return count;
-        }
         void take_position(Player player,int move_id){
             row, col = translate_move(move_id);
 
