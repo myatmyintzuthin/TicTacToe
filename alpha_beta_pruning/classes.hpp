@@ -1,6 +1,5 @@
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
+#include "utils.hpp"
 
 #define TRUE 1
 #define FALSE 0
@@ -136,11 +135,8 @@ class gameBoard{
                                     board[i][j] = 'X';
                                     score = minimax(board, depth + 1, alpha, beta, FALSE);
                                     board[i][j] = ' ';
-                                    if(score > bestScore)
-                                        bestScore = score;
-                                    
-                                    if(alpha > score)
-                                        alpha = score;
+                                    bestScore = max(score, bestScore);
+                                    alpha = max(alpha, bestScore);
                                 
                                     if(beta <= alpha)
                                         break;
@@ -162,12 +158,9 @@ class gameBoard{
                                     board[i][j] = 'O';
                                     score = minimax(board, depth + 1, alpha, beta, TRUE);
                                     board[i][j] = ' ';
-                                    if (score < bestScore)
-                                        bestScore = score;
-                                    
-                                    if (beta < score)
-                                        beta = score;
-                                    
+                                    bestScore = min(score, bestScore);
+                                    beta = min(beta, bestScore);
+                                   
                                     if (beta <= alpha)
                                         break;
                                 }

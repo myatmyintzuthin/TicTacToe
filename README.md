@@ -7,6 +7,12 @@ One player TicTacToe game. To play the game run:
 ./minimax/tic_tac_toe_minimax
 ```
 
+## HUMAN Vs AI - Alpha Beta Pruning
+One player TicTacToe game. To play the game run:
+```
+./alpha_beta_pruning/alpha_beta_pruning
+```
+
 ### Board style:
 ```bash
 ****** Tic Tac Toe ****** 
@@ -26,4 +32,5 @@ Current Board:
 --- --- ---
 
 Do you want to go first?[y/n] 
+
 

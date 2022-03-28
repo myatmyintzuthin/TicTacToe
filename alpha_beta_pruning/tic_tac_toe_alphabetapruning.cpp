@@ -1,6 +1,5 @@
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
+
 #include "classes.hpp"
 #define AI 2
 #define HUMAN 3
